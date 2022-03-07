@@ -40,6 +40,10 @@
 <br>
 
 ## Config
+
+<details>
+  <summary>Click to open</summary>
+
 ```yaml
 ---
 # WarpGUI config.yml
@@ -59,9 +63,9 @@ msg-teleport: "§aSuccessfully teleport to warp§6 {warp}"
 menu-name: "WarpGUI"
 ...
 ```
+</details>
 
-<br>
-
+---
 ## For Developer
 - You can access to WarpGUI by using ```WarpGUI::getInstance()```
 - Create Warp Usage:
@@ -82,6 +86,6 @@ WarpGUI::getInstance()->removeWarp($warpname);
 <br>
 
 ## Install
-- Step 1: Click the `Direct Download` button to download the plugin
-- Step 2: move the file `WarpGUI.phar` into the file `plugins`
-- Step 3: Restart server for plugins to work
+>- Step 1: Click the `Direct Download` button to download the plugin
+>- Step 2: move the file `WarpGUI.phar` into the file `plugins`
+>- Step 3: Restart server for plugins to work
