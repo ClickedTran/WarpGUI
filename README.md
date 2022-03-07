@@ -1,6 +1,6 @@
 ## General
 
-| **Plugins* | *WarpGUI** |
+| **Plugins** | **WarpGUI** |
 | --- | --- |
 | **Version** | **1.0.0** |
 | **State** | **<a href="https://poggit.pmmp.io/p/WarpGUI"><img src="https://poggit.pmmp.io/shield.state/WarpGUI"></a>** |
