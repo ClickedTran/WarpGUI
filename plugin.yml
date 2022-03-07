@@ -2,7 +2,7 @@ name: WarpGUI
 main: ClickedTran\WarpGUI\WarpGUI
 api: 4.0.0
 version: 1.0.0
-author: ClickedTran, NoobMCBG
+author: ClickedTran
 description: it's a plugin that allows you to navigate using the chest menu
 
 permissions:
