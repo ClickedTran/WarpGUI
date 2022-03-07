@@ -6,14 +6,14 @@ author: ClickedTran, NoobMCBG
 description: it's a plugin that allows you to navigate using the chest menu
 
 permissions:
-  warpgui.command.setwarp:
+  warpgui.command.create:
     description: Permission add warp
     default: op
-  warpgui.command.editwarp:
-    description: Permission edit warp
+  warpgui.command.remove:
+    description: Permission remove warp
     default: op
-  warpgui.command.deletewarp:
-    description: Permission delete warp
+  warpgui.command.edit:
+    description: Permission edit warp
     default: op
   warpgui.command.help:
     description: Permission help all commands warp
