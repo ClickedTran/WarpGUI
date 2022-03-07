@@ -1,4 +1,4 @@
-<p align="center">
+## General
 
 | **Plugins** | **WarpGUI** |
 | --- | --- |
@@ -11,7 +11,6 @@
 <img src="https://github.com/Clickedtran/WarpGUI/blob/main/icon.png"/>
 <br>
 ✔️ The plugin is inspired by the WarpGUI of Minecraft PC ✔️
-</p>
 
 ## Features
 - It's a plugin that allows you to navigate using the chest menu
