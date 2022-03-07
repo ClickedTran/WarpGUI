@@ -50,6 +50,7 @@
 <details>
   <summary>Click to open</summary>
 
+```yaml
 ---
 # WarpGUI config.yml
 #    
@@ -67,6 +68,7 @@ msg-teleport: "§aSuccessfully teleport to warp§6 {warp}"
 # Menu WarpGUI Name
 menu-name: "WarpGUI"
 ...
+```
 </details>
 
 ---
@@ -83,13 +85,13 @@ $y = $player->getPosition()->getY();
 $z = $player->getPosition()->getZ();
 $world = $player->getPosition()->getWorld()->getDisplayName();
 WarpGUI::getInstance()->addWarp($warpname, $x, $y, $z, $world);
-
+```
 - Remove Warp Usage:
-
+```php
 $warpname = "Warp1";
 WarpGUI::getInstance()->removeWarp($warpname);
 </details>
-
+```
 <br>
 
 ## Install
