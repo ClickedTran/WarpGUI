@@ -36,7 +36,7 @@
   <summary>Click to see permission</summary>
 
 - use permission `warpgui.command` to use command /warpgui
-- use permission `warpgui.command.hel`p` to use command /warpgui help
+- use permission `warpgui.command.help` to use command /warpgui help
 - use permission `warpgui.command.setwarp` to use command /warpgui setwarp
 - use permission `warpgui.command.deletewarp` to use command /warpgui deletewarp
 - use permission `warpgui.command.editwarp` to use command /warpgui editwarp
