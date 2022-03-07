@@ -1,12 +1,13 @@
-<div align="center">
-<h1>WarpGUI | 1.0.0<h1>
-</div>
 <p align="center">
-<a href="https://poggit.pmmp.io/p/WarpGUI"><img src="https://poggit.pmmp.io/shield.state/WarpGUI"></a>
+| **Plugins** | **WarpGUI** |
+| --- | --- |
+| **Version** | **1.0.0** |
+| **State** | **<a href="https://poggit.pmmp.io/p/WarpGUI"><img src="https://poggit.pmmp.io/shield.state/WarpGUI"></a>** |
+
 <br>
 ✔️ Welcome to WarpGUI, it's a plugin that allows you to navigate using the chest menu ✔️
 <br>
-<img src="https://github.com/ClickedTran-PMMP/WarpGUI/blob/main/icon.png"/>
+<img src="https://github.com/Clickedtran/WarpGUI/blob/main/icon.png"/>
 <br>
 ✔️ The plugin is inspired by the WarpGUI of Minecraft PC ✔️
 </p>
@@ -49,6 +50,9 @@
 # Message Teleport To Warp
 # Use {warp} to get warp name
 msg-teleport: "§aSuccessfully teleport to warp§6 {warp}"
+
+# Menu WarpGUI Name
+menu-name: "WarpGUI"
 ...
 ```
 
