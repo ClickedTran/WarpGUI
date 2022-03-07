@@ -1,4 +1,3 @@
-Phát Trần
 ## General
 
 | *Plugins* | *WarpGUI* |
