@@ -1,4 +1,4 @@
-## General
+### General
 
 | **Plugins** | **WarpGUI** |
 | --- | --- |
@@ -18,7 +18,8 @@
 ## Credits / Virions Used
 - [InvMenu](https://github.com/Muqsit/InvMenu) (Muqsit)
 
-<br>
+
+### Commands & Permission
 
 ## Commands
 | *Commands* | *Description* | *Aliases* |
@@ -40,7 +41,7 @@
 
 </details>
 
-<br>
+### Other
 
 ## Config
 
