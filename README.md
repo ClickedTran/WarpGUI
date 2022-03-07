@@ -99,12 +99,14 @@ WarpGUI::getInstance()->removeWarp($warpname);
 
 <br>
 
+## Tutorial Setup
+- [See Here](https://www.youtube.com/watch?v=KRF0pttAR04)
+
+<br>
+
 ## Install
 >- Step 1: Click the `Direct Download` button to download the plugin
 >- Step 2: move the file `WarpGUI.phar` into the file `plugins`
 >- Step 3: Restart server
 
 <br>
-
-## Tutorial Setup
-- [See Here](https://www.youtube.com/watch?v=KRF0pttAR04)
