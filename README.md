@@ -100,7 +100,7 @@ WarpGUI::getInstance()->removeWarp($warpname);
 <br>
 
 ## Tutorial Setup
-- [See Here](https://www.youtube.com/watch?v=KRF0pttAR04)
+- [Click Here To See The Tutorial Setup](https://www.youtube.com/watch?v=KRF0pttAR04)
 
 <br>
 
