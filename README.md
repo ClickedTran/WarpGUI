@@ -78,6 +78,7 @@ menu-name: "WarpGUI"
 <details>
   <summary>Click to see</summary>
 >- Create Warp Usage:
+
 ```php
 $warpname = "Warp1";
 $x = $player->getPosition()->getX();
@@ -86,12 +87,16 @@ $z = $player->getPosition()->getZ();
 $world = $player->getPosition()->getWorld()->getDisplayName();
 WarpGUI::getInstance()->addWarp($warpname, $x, $y, $z, $world);
 ```
+
 - Remove Warp Usage:
+
 ```php
 $warpname = "Warp1";
 WarpGUI::getInstance()->removeWarp($warpname);
-</details>
 ```
+
+</details>
+
 <br>
 
 ## Install
