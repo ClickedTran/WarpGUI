@@ -1,0 +1,10 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/Clickedtran/WarpGUI-PM4
+build-by-default: true
+branches:
+- Master
+projects:
+  WarpGUI-PM4:
+    path: ""
+    lint:
+      phpstan: false
+...
