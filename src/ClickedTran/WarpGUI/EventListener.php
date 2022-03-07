@@ -63,8 +63,13 @@ class EventListener implements Listener {
 		                $y = (int)$ex[1];
 		                $z = (int)$ex[2];
 		                $world = $this->plugin->getWorldWarps($warp);
-		                $this->plugin->addWarp($args[1], $x, $y, $z, $world);
-		                $this->plugin->removeWarp($warp);
+				$this->plugin->getWarp()->set($args[1], [
+                                "position" => $this->plugin->getWarp()->get($warp)["position"],
+                                "world" => $this->plugin->getWarp()->get($warp)["world"],
+                                "item" => $this->plugin->getWarp()->get($warp)["item"],
+                                "slot" => $this->plugin->getWarp()->get($warp)["slot"]
+				]);
+				$this->plugin->removeWarp($warp);
 		                unset($this->plugin->editwarp[$player->getName()]);
 		                $this->plugin->editwarp[$player->getName()] = $args[1];
 		                $player->sendMessage("§aSuccessfully rename warp to $args[1]");
