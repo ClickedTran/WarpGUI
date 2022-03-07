@@ -13,7 +13,7 @@ use ClickedTran\WarpGUI\gui\GUIManager;
 
 class WarpGUICommands extends Command implements PluginOwned {
 
-	private WarpGUI $plugin;
+    private WarpGUI $plugin;
 
     public function __construct(WarpGUI $plugin){
     	$this->plugin = $plugin;
@@ -33,19 +33,20 @@ class WarpGUICommands extends Command implements PluginOwned {
     			    if($sender->hasPermission("warpgui.command.help")){
                         $sender->sendMessage("§6> All WarpGUI Commands <");
                         $sender->sendMessage("§b/warpgui help §7- Display all command WarpGUI");
-                        $sender->sendMessage("§b/warpgui setwarp §7- Add warp to data");
-                        $sender->sendMessage("§b/warpgui deletewarp §7- Remove warp in data");
-                        $sender->sendMessage("§b/warpgui listwarp §7- See all warp in data");
-                        $sender->sendMessage("§b/warpgui editwarp §7- Edit warp in data");
+                        $sender->sendMessage("§b/warpgui create §7- Add warp to data");
+                        $sender->sendMessage("§b/warpgui remove §7- Remove warp in data");
+                        $sender->sendMessage("§b/warpgui edit §7- Edit warp in data");
     			    }else{
                         $sender->sendMessage("§cYou no permission to use this command!");
                     }
     			break;
-    			case "setwarp":
-                case "addwarp":
-                case "set":
-                case "add":
-    			    if($sender->hasPermission("warpgui.command.setwarp")){
+    			case "create":
+                        case "add":
+                        case "new":
+			case "createwarp":
+                        case "addwarp":
+                        case "newwarp":
+    			    if($sender->hasPermission("warpgui.command.create")){
                         if(!isset($args[1])){
                         	$sender->sendMessage("§cUsage:§7 /warpgui setwarp <warp name>");
                         	return true;
@@ -60,14 +61,16 @@ class WarpGUICommands extends Command implements PluginOwned {
                         $sender->sendMessage("§cYou no permission to use this command!");
                     }
     			break;
+			case "remove":
+			case "delete":
     			case "deletewarp":
-                case "removewarp":
-                case "delwarp":
-                case "rmwarp":
-                case "delete":
-                case "del":
-                case "remove":
-                case "rm":
+                        case "removewarp":
+                        case "delwarp":
+                        case "rmwarp":
+                        case "delete":
+                        case "del":
+                        case "remove":
+                        case "rm":
     			    if($sender->hasPermission("warpgui.command.deletewarp")){
                         if(!isset($args[1])){
                             $sender->sendMessage("§cUsage:§7 /warpgui setwarp <warp name>");
@@ -83,9 +86,9 @@ class WarpGUICommands extends Command implements PluginOwned {
                         $sender->sendMessage("§cYou no permission to use this command!");
                     }
     			break;
-    			case "editwarp":
+    			case "edit":
                 case "setup":
-                case "edit":
+                case "editwarp":
     			    if($sender->hasPermission("warpgui.command.editwarp")){
                         if(!isset($args[1])){
                             $sender->sendMessage("§cUsage:§7 /warpgui editwarp <warp name>");
@@ -117,7 +120,10 @@ class WarpGUICommands extends Command implements PluginOwned {
                     }
                 break;
     		}
-    	}
+    	}else{
+            $gui = new GUIManager();
+            $gui->menuWarpGUI($sender);
+	}
     }
 
     public function getOwningPlugin() : WarpGUI {
