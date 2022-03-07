@@ -1,9 +1,11 @@
-### General
+## General
 
 | **Plugins** | **WarpGUI** |
 | --- | --- |
 | **Version** | **1.0.0** |
 | **State** | **<a href="https://poggit.pmmp.io/p/WarpGUI"><img src="https://poggit.pmmp.io/shield.state/WarpGUI"></a>** |
+
+<br>
 
 >- Welcome to WarpGUI, it's a plugin that allows you to navigate using the chest menu
 >- The plugin is inspired by the WarpGUI of Minecraft PC
@@ -18,13 +20,12 @@
 ## Credits / Virions Used
 - [InvMenu](https://github.com/Muqsit/InvMenu) (Muqsit)
 
-
-### Commands & Permission
+<br>
 
 ## Commands
-| *Commands* | *Description* | *Aliases* |
+| **Commands** | **Description** | **Aliases** |
 | --- | --- | --- |
-| */warpgui* | *WarpGUI Commands* | */warp* |
+| **/warpgui** | **WarpGUI Commands** | **/warp** |
 
 <br>
 
@@ -41,7 +42,7 @@
 
 </details>
 
-### Other
+<br>
 
 ## Config
 
@@ -99,6 +100,6 @@ WarpGUI::getInstance()->removeWarp($warpname);
 <br>
 
 ## Install
->- Step 1: Click the Direct Download button to download the plugin
->- Step 2: move the file WarpGUI.phar into the file plugins
->- Step 3: Restart server for plugins to work
+>- Step 1: Click the `Direct Download` button to download the plugin
+>- Step 2: move the file `WarpGUI.phar` into the file `plugins`
+>- Step 3: Restart server
