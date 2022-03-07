@@ -71,7 +71,7 @@ class WarpGUICommands extends Command implements PluginOwned {
                         case "del":
                         case "remove":
                         case "rm":
-    			    if($sender->hasPermission("warpgui.command.deletewarp")){
+    			    if($sender->hasPermission("warpgui.command.remove")){
                         if(!isset($args[1])){
                             $sender->sendMessage("§cUsage:§7 /warpgui setwarp <warp name>");
                             return true;
@@ -89,7 +89,7 @@ class WarpGUICommands extends Command implements PluginOwned {
     			case "edit":
                 case "setup":
                 case "editwarp":
-    			    if($sender->hasPermission("warpgui.command.editwarp")){
+    			    if($sender->hasPermission("warpgui.command.edit")){
                         if(!isset($args[1])){
                             $sender->sendMessage("§cUsage:§7 /warpgui editwarp <warp name>");
                             return true;
@@ -121,8 +121,13 @@ class WarpGUICommands extends Command implements PluginOwned {
                 break;
     		}
     	}else{
-            $gui = new GUIManager();
-            $gui->menuWarpGUI($sender);
+	    if($sender->hasPermission("warpgui.command.help")){
+                $sender->sendMessage("§cUsage:§7 /warpgui help");
+                $sender->sendMessage("§cIf you want to open the warp menu, use the command:§7 /warpgui warp");
+	    }else{
+                $gui = new GUIManager();
+                $gui->menuWarpGUI($sender);
+	    }
 	}
     }
 
