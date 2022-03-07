@@ -41,11 +41,11 @@ class EventListener implements Listener {
 				    $world = $player->getPosition()->getWorld()->getDisplayName();
 				    if($this->plugin->getWarp()->exists($warp)){
 				        $this->plugin->getWarp()->set($warp, [
-                            "position" => "$x $y $z",
-                            "world" => "$world",
-                            "item" => $this->plugin->getWarp()->get($warp)["item"],
-                            "slot" => $this->plugin->getWarp()->get($warp)["slot"]
-		                ]);
+                                             "position" => "$x $y $z",
+                                             "world" => "$world",
+                                             "item" => $this->plugin->getWarp()->get($warp)["item"],
+                                             "slot" => $this->plugin->getWarp()->get($warp)["slot"]
+		                        ]);
 		                $this->plugin->getWarp()->save();
 		                $player->sendMessage("§aSuccessfully updated position in X: $x Y: $y Z: $z World: $world");
 		            }else{
@@ -64,17 +64,18 @@ class EventListener implements Listener {
 		                $z = (int)$ex[2];
 		                $world = $this->plugin->getWorldWarps($warp);
 				$this->plugin->getWarp()->set($args[1], [
-                                "position" => $this->plugin->getWarp()->get($warp)["position"],
-                                "world" => $this->plugin->getWarp()->get($warp)["world"],
-                                "item" => $this->plugin->getWarp()->get($warp)["item"],
-                                "slot" => $this->plugin->getWarp()->get($warp)["slot"]
+                                     "position" => $this->plugin->getWarp()->get($warp)["position"],
+                                     "world" => $this->plugin->getWarp()->get($warp)["world"],
+                                     "item" => $this->plugin->getWarp()->get($warp)["item"],
+                                     "slot" => $this->plugin->getWarp()->get($warp)["slot"]
 				]);
+				$this->plugin->getWarp()->save();
 				$this->plugin->removeWarp($warp);
 		                unset($this->plugin->editwarp[$player->getName()]);
 		                $this->plugin->editwarp[$player->getName()] = $args[1];
 		                $player->sendMessage("§aSuccessfully rename warp to $args[1]");
 		            }else{
-                        $player->sendMessage("§cWarp name $args[1] is already exists");
+                                $player->sendMessage("§cWarp name $args[1] is already exists");
 		            }
                 break;
                 case "item":
@@ -87,6 +88,7 @@ class EventListener implements Listener {
                             "item" => $id.":".$meta,
                             "slot" => $this->plugin->getWarp()->get($warp)["slot"]
                     	]);
+                        $this->plugin->getWarp()->save();
                     	$player->sendMessage("§aSuccessfully update item warp in gui");
                     }else{
                     	$player->sendMessage("§cPlease hold an item in your hand");
@@ -102,17 +104,18 @@ class EventListener implements Listener {
 		                	$slot = (int)$args[1];
 		                    if(!$this->plugin->getWarp()->exists($args[1])){
 		                        $this->plugin->getWarp()->set($warp, [
-                                    "position" => $this->plugin->getWarp()->get($warp)["position"],
-                                    "world" => $this->plugin->getWarp()->get($warp)["world"],
-                                    "item" => $this->plugin->getWarp()->get($warp)["item"],
-                                    "slot" => $slot
-                            	]);
+                                             "position" => $this->plugin->getWarp()->get($warp)["position"],
+                                             "world" => $this->plugin->getWarp()->get($warp)["world"],
+                                             "item" => $this->plugin->getWarp()->get($warp)["item"],
+                                             "slot" => $slot
+                            	        ]);
+					$this->plugin->getWarp()->save();
 		                        $player->sendMessage("§aSuccessfully update slot item in warp to $slot");
 		                    }else{
-                                $player->sendMessage("§cThe warp you are editing no longer exists in the data");
+                                       $player->sendMessage("§cThe warp you are editing no longer exists in the data");
 		                    }
 		                }else{
-		                	$player->sendMessage("§cThe number you enter can only be entered from 0 -> 53");
+		                    $player->sendMessage("§cThe number you enter can only be entered from 0 -> 53");
 		                }
 		            }else{
 		            	$player->sendMessage("§cUsage:§7 slot <int>");
