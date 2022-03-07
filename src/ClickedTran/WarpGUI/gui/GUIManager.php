@@ -29,7 +29,7 @@ class GUIManager {
 	        	}else{
 	        		$item = StringToItemParser::getInstance()->parse($ex[0]);
 	        	}
-	        	$item->setCustomName($warp);
+	        	$item->setCustomName((string)$warp);
 	        	$item->setLore(["§dWARP:§a $warp \n§eCLICK TO TELEPORT"]);
 	        	if(!$inv->getItem(WarpGUI::getInstance()->getWarp()->getAll()[$warp]["slot"])->getId() > 0){
 	        	    $inv->setItem(WarpGUI::getInstance()->getWarp()->getAll()[$warp]["slot"], $item);
