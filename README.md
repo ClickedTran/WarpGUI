@@ -9,7 +9,7 @@
 
 >- Welcome to WarpGUI, it's a plugin that allows you to navigate using the chest menu
 >- The plugin is inspired by the WarpGUI of Minecraft PC
-![screenshot](WarpGUI.gif)
+![screenshot](icon.gif)
 
 ## Features
 - It's a plugin that allows you to navigate using the chest menu
