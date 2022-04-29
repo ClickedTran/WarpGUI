@@ -31,7 +31,7 @@
 
 ## Permission
 
-<details>
+<details> 
   <summary>Click to see permission</summary>
 
 - use permission `warpgui.command` to use command /warpgui
