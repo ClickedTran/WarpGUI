@@ -7,7 +7,7 @@
 <a hred="https://poggit.pmmp.io/p/WarpGUI"><img src="https://poggit.pmmp.io/shield.dl.total/WarpGUI"></a>
 <a hred="https://poggit.pmmp.io/p/WarpGUI"><img src="https://poggit.pmmp.io/shield.dl/WarpGUI"></a>
 <br>
-![screenshot](icon.gif)
+<img src="https://github.com/Clickedtran/WarpGUI-PM4/blob/Master/icon.gif/
 <br>
 ✓ The plugin allows you to create and edit warps ✓
 <br>
