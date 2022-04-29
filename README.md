@@ -11,6 +11,7 @@
 <br>
 ✓ Can add or remove more areas ✓
 <br>
+
 ## Features
 - It's a plugin that allows you to navigate using the chest menu
 - The plugin is inspired by the WarpGUI of Minecraft PC
