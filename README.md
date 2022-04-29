@@ -1,11 +1,11 @@
-<div align="center">
-<h1>WarpGUI | v1.0.0<h1>
-</div>
-<p align="center">
-<a href="https://poggit.pmmp.io/p/WarpGUI"><img src="https://poggit.pmmp.io/shield.state/WarpGUI"></a>
-<a href="https://poggit.pmmp.io/p/WarpGUI"><img src="https://poggit.pmmp.io/shield.api/WarpGUI"></a>
-<a href="https://poggit.pmmp.io/p/WarpGUI"><img src="https://poggit.pmmp.io/shield.dl.total/WarpGUI"></a>
-<a href="https://poggit.pmmp.io/p/WarpGUI"><img src="https://poggit.pmmp.io/shield.dl/WarpGUI"></a>
+## General
+
+| **Plugins** | **WarpGUI** |
+| --- | --- |
+| **API** | **<a href="https://poggit.pmmp.io/p/WarpGUI"><img src="https://poggit.pmmp.io/shield.api/WarpGUI"></a>** |
+| **Version** | **<a href="https://poggit.pmmp.io/p/WarpGUI"><img src="https://poggit.pmmp.io/shield.state/WarpGUI"></a>** |
+| **Download** | **<a href="https://poggit.pmmp.io/p/WarpGUI"><img src="https://poggit.pmmp.io/shield.dl/WarpGUI"></a>** |
+| **Total Download** | **<a href="https://poggit.pmmp.io/p/WarpGUI"><img src="https://poggit.pmmp.io/shield.dl.total/WarpGUI"></a>** |
 <br>
 ✔️ The plugin allows you to create and edit warps ✔️
 <br>
