@@ -82,11 +82,7 @@ menu-name: "WarpGUI"
 
 ```php
 $warpname = "Warp1";
-$x = $player->getPosition()->getX();
-$y = $player->getPosition()->getY();
-$z = $player->getPosition()->getZ();
-$world = $player->getPosition()->getWorld()->getDisplayName();
-WarpGUI::getInstance()->addWarp($warpname, $x, $y, $z, $world);
+WarpGUI::getInstance()->addWarp($warpname);
 ```
 
 >- Remove Warp Usage:
