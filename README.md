@@ -7,9 +7,9 @@
 <a href="https://poggit.pmmp.io/p/WarpGUI"><img src="https://poggit.pmmp.io/shield.dl.total/WarpGUI"></a>
 <a href="https://poggit.pmmp.io/p/WarpGUI"><img src="https://poggit.pmmp.io/shield.dl/WarpGUI"></a>
 <br>
-✓ The plugin allows you to create and edit warps ✓
+✔️ The plugin allows you to create and edit warps ✔️
 <br>
-✓ Can add or remove more areas ✓
+✔️ Can add or remove more areas ✔️
 <br>
 
 ## Features
