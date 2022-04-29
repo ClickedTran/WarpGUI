@@ -1,16 +1,18 @@
-## General
-
-| **Plugins** | **WarpGUI** |
-| --- | --- |
-| **Version** | **1.0.0** |
-| **State** | **<a href="https://poggit.pmmp.io/p/WarpGUI"><img src="https://poggit.pmmp.io/shield.state/WarpGUI"></a>** |
-
+<div align="center">
+<h1>WarpGUI | v1.0.0<h1>
+</div>
+<p align="center">
+<a href="https://poggit.pmmp.io/p/WarpGUI"><img src="https://poggit.pmmp.io/shield.api/WarpGUI"></a>
+<a hred="https://poggit.pmmp.io/p/WarpGUI"><img src="https://poggit.pmmp.io/shield.states/WarpGUI"></a>
+<a hred="https://poggit.pmmp.io/p/WarpGUI"><img src="https://poggit.pmmp.io/shield.dl.total/WarpGUI"></a>
+<a hred="https://poggit.pmmp.io/p/WarpGUI"><img src="https://poggit.pmmp.io/shield.dl/WarpGUI"></a>
 <br>
-
->- Welcome to WarpGUI, it's a plugin that allows you to navigate using the chest menu
->- The plugin is inspired by the WarpGUI of Minecraft PC
-![screenshot](icon.gif)
-
+<img src="https://github.com/Clickedtran/WarpGUI-PM4/blob/Master/icon.png/
+<br>
+✓ The plugin allows you to create and edit warps ✓
+<br>
+✓ Can add or remove more areas ✓
+<br>
 ## Features
 - It's a plugin that allows you to navigate using the chest menu
 - The plugin is inspired by the WarpGUI of Minecraft PC
