@@ -17,9 +17,14 @@
 - The plugin is inspired by the WarpGUI of Minecraft PC
 
 <br>
+<h3>Fixed</h3>
+
+>- Fixed error: ` Do not have in hand`
+<br>
 
 ## Credits / Virions Used
 - [InvMenu](https://github.com/Muqsit/InvMenu) (Muqsit)
+- [DEVirion](https://github.com/poggit/devirion) (SOF3)
 
 <br>
 
@@ -98,6 +103,7 @@ WarpGUI::getInstance()->removeWarp($warpname);
 
 ## Tutorial Setup
 - [Click Here To See The Tutorial Setup](https://www.youtube.com/watch?v=KRF0pttAR04)
+- IMPORTANT THING: You need to install the `DEVirion` plugin into the `plugins/` directory of the server, reload the server, then look for the `virions/` directory, next download and paste the `InvMenu` folder there.
 
 <br>
 
