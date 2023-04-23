@@ -6,6 +6,5 @@ projects:
   WarpGUI-PM4:
     path: ""
     lint:
-      phpstan: false
     icon: icon.gif
 ...
