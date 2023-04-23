@@ -8,10 +8,10 @@ use Closure;
 use pocketmine\player\Player;
 use pocketmine\item\ItemFactory;
 use pocketmine\item\StringToItemParser;
-use ClickedTran\WarpGUI\libs\muqsit\invmenu\InvMenu;
-use ClickedTran\WarpGUI\libs\muqsit\invmenu\transaction\InvMenuTransaction;
-use ClickedTran\WarpGUI\libs\muqsit\invmenu\transaction\InvMenuTransactionResult;
-use ClickedTran\WarpGUI\libs\muqsit\invmenu\type\InvMenuTypeIds;
+use muqsit\invmenu\InvMenu;
+use muqsit\invmenu\transaction\InvMenuTransaction;
+use muqsit\invmenu\transaction\InvMenuTransactionResult;
+use muqsit\invmenu\type\InvMenuTypeIds;
 use ClickedTran\WarpGUI\WarpGUI;
 
 class GUIManager {
