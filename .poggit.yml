@@ -5,6 +5,5 @@ branches:
 projects:
   WarpGUI-PM4:
     path: ""
-    lint:
     icon: icon.gif
 ...
