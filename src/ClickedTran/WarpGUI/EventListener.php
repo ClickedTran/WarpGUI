@@ -80,6 +80,9 @@ class EventListener implements Listener {
                 break;
                 case "item":
                     if($player->getInventory()->getItemInHand()->getId() > 0){
+                      if($player->getInventory()->getItemInHand() == null){
+                        $player->sendMessage("§l§cPlease hold an item in your hand");
+                      }else{
                     	$id = $player->getInventory()->getItemInHand()->getId();
                     	$meta = $player->getInventory()->getItemInHand()->getMeta();
                     	$this->plugin->getWarp()->set($warp, [
@@ -90,9 +93,11 @@ class EventListener implements Listener {
                     	]);
                         $this->plugin->getWarp()->save();
                     	$player->sendMessage("§aSuccessfully update item warp in gui");
+                      }
                     }else{
                     	$player->sendMessage("§cPlease hold an item in your hand");
                     }
+      
                 break;
                 case "slot":
                     if(isset($args[1])){
