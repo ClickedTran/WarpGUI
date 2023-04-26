@@ -10,7 +10,7 @@
 
 
 
-<img src="https://github.com/Clickedtran/WarpGUI-PM4/blob/Master/icon.gif">
+<img src="https://github.com/Clickedtran/WarpGUI-PM4/blob/Master/icon.png">
 
 <br>
 
