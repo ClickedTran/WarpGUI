@@ -55,6 +55,8 @@ class EventListener implements Listener {
 		        case "name":
 		            if(!isset($args[1])){
 		            	$player->sendMessage("§cUsage:§7 name <name>");
+				    
+
 		            }
 		            if(!$this->plugin->getWarp()->exists($args[1])){
 		                $ex = explode(" ", $this->plugin->getPositionWarps($warp));
@@ -90,6 +92,7 @@ class EventListener implements Listener {
                             "item" => $id.":".$meta,
                             "slot" => $this->plugin->getWarp()->get($warp)["slot"]
                     	]);
+			      
                         $this->plugin->getWarp()->save();
                     	$player->sendMessage("§aSuccessfully update item warp in gui");
                       }
