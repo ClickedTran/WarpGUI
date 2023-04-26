@@ -9,9 +9,9 @@
 <br>
 
 
-
-<img src="https://github.com/Clickedtran/WarpGUI-PM4/blob/Master/icon.png">
-
+<div align="center">
+<img src="https://github.com/Clickedtran/WarpGUI-PM4/blob/Master/icon.png" width="300px" height="auto">
+</div>
 <br>
 
 ✔️ The plugin allows you to create and edit warps ✔️
