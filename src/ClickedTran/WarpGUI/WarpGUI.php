@@ -9,7 +9,7 @@ use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 use pocketmine\world\Position;
-use muqsit\invmenu\InvMenuHandler;
+use ClickedTran\WarpGUI\libs\muqsit\invmenu\InvMenuHandler;
 use ClickedTran\WarpGUI\commands\WarpGUICommands;
 use ClickedTran\WarpGUI\event\AddWarpEvent;
 use ClickedTran\WarpGUI\event\RemoveWarpEvent;
