@@ -16,7 +16,7 @@ class EventListener implements Listener {
          $this->plugin = $plugin;
     }
   
-    public function onChat(PlayerChatEvent $event): void{
+    public function onChat(PlayerChatEvent $event){
 		$player = $event->getPlayer();
 		if(isset($this->plugin->editwarp[$player->getName()])){
 			$event->cancel();
