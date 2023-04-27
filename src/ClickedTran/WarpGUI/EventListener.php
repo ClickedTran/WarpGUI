@@ -55,7 +55,7 @@ class EventListener implements Listener {
 		        case "name":
 		            if(!isset($args[1])){
 		            	$player->sendMessage("§cUsage:§7 name <name>");
-		            	return;
+		            	return true;
 		            }
 		            if(!$this->plugin->getWarp()->exists($args[1])){
 		                $ex = explode(" ", $this->plugin->getPositionWarps($warp));
@@ -103,7 +103,7 @@ class EventListener implements Listener {
                     if(isset($args[1])){
 		                if(!is_numeric($args[1])){
 		                	$player->sendMessage("§cUsage:§7 slot <int>");
-		                	return;
+		                	return true;
 		                }
 		                if($args[1] >= 0 || $args[1] <= 53){
 		                	$slot = (int)$args[1];
