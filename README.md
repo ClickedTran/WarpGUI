@@ -25,7 +25,7 @@
 
 <br>
 <h3>Fixed</h3>
-
+>- Issues #2
 >- Fixed error: ` Do not have in hand`
 <br>
 
