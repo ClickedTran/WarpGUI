@@ -13,7 +13,7 @@ use ClickedTran\WarpGUI\gui\GUIManager;
 
 class WarpGUICommands extends Command implements PluginOwned {
 
-    private WarpGUI $plugin;
+    private WarpGUI $plugin, $warp;
 
     public function __construct(WarpGUI $plugin){
     	$this->plugin = $plugin;
