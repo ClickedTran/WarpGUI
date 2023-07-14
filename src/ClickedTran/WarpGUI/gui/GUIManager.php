@@ -8,6 +8,7 @@ use Closure;
 use pocketmine\player\Player;
 use pocketmine\item\ItemFactory;
 use pocketmine\item\StringToItemParser;
+use pocketmine\item\LegacyStringToItemParser;
 use muqsit\invmenu\InvMenu;
 use muqsit\invmenu\transaction\InvMenuTransaction;
 use muqsit\invmenu\transaction\InvMenuTransactionResult;
@@ -23,16 +24,9 @@ class GUIManager {
 		$inv = $menu->getInventory();
 		if(count(WarpGUI::getInstance()->getWarp()->getAll()) >= 1){
 	        foreach(WarpGUI::getInstance()->getWarp()->getAll() as $warp => $slot){
-	        	$ex = explode(":", WarpGUI::getInstance()->getWarp()->getAll()[$warp]["item"]);
-	        	if(is_numeric($ex[0])){
-	        		$item = ItemFactory::getInstance()->get((int)$ex[0], (int)$ex[1], 1);
-	        	}else{
-	        		$item = StringToItemParser::getInstance()->parse($ex[0]);
-	        	}
-	        	$item->setCustomName((string)$warp);
-	        	$item->setLore(["§dWARP:§a $warp \n§eCLICK TO TELEPORT"]);
-	        	if(!$inv->getItem(WarpGUI::getInstance()->getWarp()->getAll()[$warp]["slot"])->getId() > 0){
-	        	    $inv->setItem(WarpGUI::getInstance()->getWarp()->getAll()[$warp]["slot"], $item);
+	        	$name = WarpGUI::getInstance()->getWarp()->getAll()[$warp]["item"];
+	        	if(!$inv->getItem(WarpGUI::getInstance()->getWarp()->getAll()[$warp]["slot"])->getTypeId() >= 0){
+	        	    $inv->setItem(WarpGUI::getInstance()->getWarp()->getAll()[$warp]["slot"], StringToItemParser::getInstance()->parse($name)->setCustomName((string)$warp)->setLore(["§dWARP:§a $warp \n§eCLICK TO TELEPORT"])->setCount(1));
 	        	}
 	        }
 	    }
