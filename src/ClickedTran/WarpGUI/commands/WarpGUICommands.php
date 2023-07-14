@@ -26,7 +26,10 @@ class WarpGUICommands extends Command implements PluginOwned {
     		$sender->sendMessage("§cPlease use command in-game");
     		return true;
     	}
-    	if(isset($args[0])){
+    	if(!isset($args[0])){
+    	  $gui = new GUIManager();
+        $gui->menuWarpGUI($sender);
+    	}else{
     		switch($args[0]){
     			case "help":
     			case "?":
@@ -120,15 +123,7 @@ class WarpGUICommands extends Command implements PluginOwned {
                     }
                 break;
     		}
-    	}else{
-	    if($sender->hasPermission("warpgui.command.help")){
-                $sender->sendMessage("§cUsage:§7 /warpgui help");
-                $sender->sendMessage("§cIf you want to open the warp menu, use the command:§7 /warpgui warp");
-	    }else{
-                $gui = new GUIManager();
-                $gui->menuWarpGUI($sender);
-	    }
-	}
+    	}
     }
 
     public function getOwningPlugin() : WarpGUI {
