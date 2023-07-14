@@ -19,6 +19,7 @@ use ClickedTran\WarpGUI\event\TeleportWarpEvent;
 class WarpGUI extends PluginBase implements Listener {
 
 	public $editwarp = [];
+	public $warp;
         
 	/** @var WarpGUI */
 	public static $instance;
