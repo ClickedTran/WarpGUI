@@ -94,8 +94,8 @@ class EventListener implements Listener {
                     	]);
                         WarpGUI::getInstance()->getWarp()->save();
                     	$player->sendMessage("§aSuccessfully update item warp in gui");
-		      return true;
-                    }
+			return;
+		    }
                 break;
                 case "slot":
                     if(isset($args[1])){
