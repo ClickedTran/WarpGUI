@@ -84,7 +84,7 @@ class EventListener implements Listener {
                 break;
                 case "item":
                   $item = $player->getInventory()->getItemInHand();
-                    if(!$item instanceof ItemBlock || $item instanceof Item){
+                    if($item instanceof ItemBlock || $item instanceof Item){
                     	$name = str_replace([" "], ["_"], strtolower($player->getInventory()->getItemInHand()->getVanillaName()));
                     	WarpGUI::getInstance()->getWarp()->set($warp, [
                             "position" => WarpGUI::getInstance()->getWarp()->get($warp)["position"],
@@ -94,6 +94,11 @@ class EventListener implements Listener {
                     	]);
                         WarpGUI::getInstance()->getWarp()->save();
                     	$player->sendMessage("§aSuccessfully update item warp in gui");
+		    } else {
+		       if($item->getTypeId() === BlockTypeIds::AIR){
+			  $player->sendMessage("Please hold an item in your hand!");
+			   return;
+		       }
 		    }
                 break;
                 case "slot":
