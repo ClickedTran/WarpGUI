@@ -7,8 +7,12 @@ namespace ClickedTran\WarpGUI;
 use pocketmine\player\Player;
 use pocketmine\event\Event;
 use pocketmine\event\Listener;
+use pocketmine\item\{Item, ItemBlock};
+use pocketmine\block\BlockTypeIds;
 use pocketmine\event\player\PlayerChatEvent;
+
 use ClickedTran\WarpGUI\WarpGUI;
+
 
 class EventListener implements Listener {
     public $plugin;
@@ -41,13 +45,13 @@ class EventListener implements Listener {
 				    $world = $player->getPosition()->getWorld()->getDisplayName();
 				    if(WarpGUI::getInstance()->getWarp()->exists($warp)){
 				        WarpGUI::getInstance()->getWarp()->set($warp, [
-				          "position" => "$x $y $z",  
-				          "world" => "$world",
-				          "item" => WarpGUI::getInstance()->getWarp()->get($warp)["item"],        
-				          "slot" => WarpGUI::getInstance()->getWarp()->get($warp)["slot"]
-		               ]);
-		               WarpGUI::getInstance()->getWarp()->save();
-		               $player->sendMessage("§aSuccessfully updated position in X: $x Y: $y Z: $z World: $world");
+                                             "position" => "$x $y $z",
+                                             "world" => "$world",
+                                             "item" => WarpGUI::getInstance()->getWarp()->get($warp)["item"],
+                                             "slot" => WarpGUI::getInstance()->getWarp()->get($warp)["slot"]
+		                        ]);
+		                WarpGUI::getInstance()->getWarp()->save();
+		                $player->sendMessage("§aSuccessfully updated position in X: $x Y: $y Z: $z World: $world");
 		            }else{
 		            	$player->sendMessage("§cThe warp you are editing no longer exists in the data");
 		            }
@@ -79,19 +83,17 @@ class EventListener implements Listener {
 		            }
                 break;
                 case "item":
-                    if($player->getInventory()->getItemInHand()->getId() > 0){
-                    	$id = $player->getInventory()->getItemInHand()->getId();
-                    	$meta = $player->getInventory()->getItemInHand()->getMeta();
+                  $item = $player->getInventory()->getItemInHand();
+                    if($item instanceof ItemBlock or $item instanceof Item){
+                    	$name = str_replace([" "], ["_"], strtolower($player->getInventory()->getItemInHand()->getVanillaName()));
                     	WarpGUI::getInstance()->getWarp()->set($warp, [
                             "position" => WarpGUI::getInstance()->getWarp()->get($warp)["position"],
                             "world" => WarpGUI::getInstance()->getWarp()->get($warp)["world"],
-                            "item" => $id.":".$meta,
+                            "item" => $name,
                             "slot" => WarpGUI::getInstance()->getWarp()->get($warp)["slot"]
                     	]);
                         WarpGUI::getInstance()->getWarp()->save();
                     	$player->sendMessage("§aSuccessfully update item warp in gui");
-                    }else{
-                    	$player->sendMessage("§cPlease hold an item in your hand");
                     }
                 break;
                 case "slot":
@@ -122,17 +124,25 @@ class EventListener implements Listener {
 		            }
                 break;
                 case "done":
+                 if(WarpGUI::getInstance()->getWarp()->get($warp)["item"] == "air"){
+                    $player->sendMessage("§9[§4!§9]§c The item you setup is air. Please setup again!");
+                    return;
+                 }
+                 if(WarpGUI::getInstance()->getWarp()->get($warp)["position"] == null || WarpGUI::getInstance()->getWarp()->get($warp)["slot"] == null || WarpGUI::getInstance()->getWarp()->get($warp)["item"] == null){
+                    $player->sendMessage("§l§9[§4!§9]§c Maybe you haven't set up: §b<position | item | slot>. Please check and try again!");
+                 } else {
                     if(isset(WarpGUI::getInstance()->editwarp[$player->getName()])){
                     	unset(WarpGUI::getInstance()->editwarp[$player->getName()]);
                     	$player->sendMessage("§aYou have successfully left edit mode");
                     }
+                 }
                 break;
                 default:
                     $player->sendMessage("§6You are in edit mode, usage:");
                     $player->sendMessage("§l§7help§r§7 - Display available commands");
                     $player->sendMessage("§l§7done§r§7 - Save and leave edit mode");
                 break;
-			}
+	  	}
 		}
 	}
 }
