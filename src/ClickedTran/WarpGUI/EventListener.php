@@ -20,7 +20,7 @@ class EventListener implements Listener {
          $this->plugin = $plugin;
     }
   
-    public function onChat(PlayerChatEvent $event){
+    public function onChat(PlayerChatEvent $event) : void{
 		$player = $event->getPlayer();
 		if(isset(WarpGUI::getInstance()->editwarp[$player->getName()])){
 			$event->cancel();
@@ -94,6 +94,7 @@ class EventListener implements Listener {
                     	]);
                         WarpGUI::getInstance()->getWarp()->save();
                     	$player->sendMessage("§9[ §aSuccessfully §9]§r§e You have updated item warp in gui");
+			return;
                     }
                 break;
                 case "slot":
