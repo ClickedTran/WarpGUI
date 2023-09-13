@@ -19,9 +19,6 @@ use ClickedTran\WarpGUI\commands\subcmds\EditWarpCommand;
 use ClickedTran\WarpGUI\commands\subcmds\CreateWarpCommand;
 
 class WarpGUICommands extends BaseCommand {
-
-    private WarpGUI $plugin;
-    public $warp;
     
     public function prepare(): void{
       $this->setPermission("warpgui.command");
@@ -38,10 +35,8 @@ class WarpGUICommands extends BaseCommand {
         return;
       }
       if(count($args) === 0){
-        if(!isset($args[0])){
-            $gui = new GUIManager();
-            $gui->menuWarpGUI($sender);
-        }
+         $gui = new GUIManager();
+         $gui->menuWarpGUI($sender);
       }
     }
 }
