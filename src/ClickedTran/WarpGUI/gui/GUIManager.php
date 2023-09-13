@@ -6,9 +6,7 @@ namespace ClickedTran\WarpGUI\gui;
 
 use Closure;
 use pocketmine\player\Player;
-use pocketmine\item\ItemFactory;
 use pocketmine\item\StringToItemParser;
-use pocketmine\item\LegacyStringToItemParser;
 use muqsit\invmenu\InvMenu;
 use muqsit\invmenu\transaction\InvMenuTransaction;
 use muqsit\invmenu\transaction\InvMenuTransactionResult;
@@ -22,11 +20,12 @@ class GUIManager {
 		$menu->setName(WarpGUI::getInstance()->getConfig()->get("menu-name"));
 		$menu->setListener(Closure::fromCallable([$this, "menuWarpGUIListener"]));
 		$inv = $menu->getInventory();
-		if(count(WarpGUI::getInstance()->getWarp()->getAll()) >= 1){
-	        foreach(WarpGUI::getInstance()->getWarp()->getAll() as $warp => $slot){
-	        	$name = WarpGUI::getInstance()->getWarp()->getAll()[$warp]["item"];
-	        	if(!$inv->getItem(WarpGUI::getInstance()->getWarp()->getAll()[$warp]["slot"])->getTypeId() >= 0){
-	        	    $inv->setItem(WarpGUI::getInstance()->getWarp()->getAll()[$warp]["slot"], StringToItemParser::getInstance()->parse($name)->setCustomName((string)$warp)->setLore(["§dWARP:§a $warp \n§eCLICK TO TELEPORT"])->setCount(1));
+		$all_warp = WarpGUI::getInstance()->getWarp()->getAll();
+		if(count($all_warp) >= 1){
+	        foreach($all_warp as $warp => $slot){
+	        	$name = $all_warp[$warp]["item"];
+	        	if(!$inv->getItem($all_warp[$warp]["slot"])->getTypeId() >= 0){
+	        	    $inv->setItem($all_warp[$warp]["slot"], StringToItemParser::getInstance()->parse($name)->setCustomName((string)$warp)->setLore(["§dWarp:§a $warp \n\n§9§o> Click To Teleport <"])->setCount(1));
 	        	}
 	        }
 	    }
@@ -36,11 +35,12 @@ class GUIManager {
 	public static function menuWarpGUIListener(InvMenuTransaction $transaction) : InvMenuTransactionResult {
         $player = $transaction->getPlayer();
         $action = $transaction->getAction();
-        if(WarpGUI::getInstance()->getWarp()->exists($action->getInventory()->getItem($action->getSlot())->getName())){
+        $plugin = WarpGUI::getInstance();
+        if($plugin->getWarp()->exists($action->getInventory()->getItem($action->getSlot())->getName())){
         	$warp = $action->getInventory()->getItem($action->getSlot())->getName();
-            WarpGUI::getInstance()->teleportToWarp($player, $warp);
-            $msg = str_replace("{warp}", $warp, WarpGUI::getInstance()->getConfig()->get("msg-teleport"));
-            $msg = ($msg != null) ? $msg : "§aSuccessfully teleport to warp§6 {warp}";
+            $plugin->teleportToWarp($player, $warp);
+            $msg = str_replace("{warp}", $warp, $plugin->getConfig()->get("msg-teleport"));
+            $msg = ($msg != null) ? $msg : "§9[ §aSuccessfully §9]§r§e You have been teleported to the warp:§6 {warp}";
             $player->sendMessage($msg);
             return $transaction->discard();
         }
