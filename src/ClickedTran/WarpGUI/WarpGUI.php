@@ -9,8 +9,11 @@ use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 use pocketmine\world\Position;
-use muqsit\invmenu\InvMenu;
+
 use muqsit\invmenu\InvMenuHandler;
+use CortexPE\Commando\exception\HookAlreadyRegistered;
+use CortexPE\Commando\PacketHooker;
+
 use ClickedTran\WarpGUI\commands\WarpGUICommands;
 use ClickedTran\WarpGUI\event\AddWarpEvent;
 use ClickedTran\WarpGUI\event\RemoveWarpEvent;
@@ -33,11 +36,12 @@ class WarpGUI extends PluginBase implements Listener {
 		$this->saveDefaultConfig();
 		$this->saveResource("warp.yml");
 		$this->warp = new Config($this->getDataFolder() . "warp.yml", Config::YAML);
-		$this->getServer()->getCommandMap()->register("WarpGUI", new WarpGUICommands($this));
+		$this->getServer()->getCommandMap()->register("WarpGUI", new WarpGUICommands($this, "warpgui", "§o§7Warp Commands", ["warp"]));
 		self::$instance = $this;
 		if(!InvMenuHandler::isRegistered()){
 	            InvMenuHandler::register($this);
                 }
+    if(!PacketHooker::isRegistered()) PacketHooker::register($this);
 	}
 
 	public function getWarp(){
@@ -53,10 +57,10 @@ class WarpGUI extends PluginBase implements Listener {
         */
 	public function addWarp(string $name){
 		$this->getWarp()->set($name, [
-                "position" => [],
-                "world" => [],
-                "item" => [],
-                "slot" => []
+                "position" => "",
+                "world" => "",
+                "item" => "",
+                "slot" => ""
 		]);
 		$this->getWarp()->save();
 		(new AddWarpEvent($this, $name))->call();
@@ -91,28 +95,6 @@ class WarpGUI extends PluginBase implements Listener {
 		        $world = $this->getWarp()->get($name)["world"];
 		        $worlds = $this->getServer()->getWorldManager()->getWorldByName($world);
 		        return $worlds;
-		}
-	}
-        
-	/**
-        * @param string $name
-        */
-	public function getIdItemWarps(string $name){
-		if($this->getWarp()->exists($name)){
-			$ex = explode(":", $this->getWarp()->get($name)["item"]);
-		        $id = (int)$ex[0];
-		        return $id;
-		}
-	}
-        
-	/**
-        * @param string $name
-        */
-	public function getMetaItemWarps(string $name){
-		if($this->getWarp()->exists($name)){
-			$ex = explode(":", $this->getWarp()->get($name)["item"]);
-		        $meta = (int)$ex[1];
-		        return $meta;
 		}
 	}
         
