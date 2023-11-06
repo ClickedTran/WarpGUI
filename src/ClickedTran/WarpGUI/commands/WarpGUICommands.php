@@ -39,4 +39,9 @@ class WarpGUICommands extends BaseCommand {
          $gui->menuWarpGUI($sender);
       }
     }
+
+    public function getPermission()
+    {
+        // TODO: Implement getPermission() method.
+    }
 }
