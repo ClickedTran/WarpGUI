@@ -84,7 +84,7 @@ class EventListener implements Listener {
                 break;
                 case "item":
                   $item = $player->getInventory()->getItemInHand();
-                    if($item instanceof ItemBlock or $item instanceof Item){
+                    if($item instanceof ItemBlock && $item instanceof Item){
                     	$name = str_replace([" "], ["_"], strtolower($player->getInventory()->getItemInHand()->getVanillaName()));
                     	WarpGUI::getInstance()->getWarp()->set($warp, [
                             "position" => WarpGUI::getInstance()->getWarp()->get($warp)["position"],
