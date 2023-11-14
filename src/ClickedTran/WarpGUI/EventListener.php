@@ -20,7 +20,7 @@ class EventListener implements Listener {
          $this->plugin = $plugin;
     }
   
-    public function onChat(PlayerChatEvent $event) : void{
+    public function onChat(PlayerChatEvent $event){
 		$player = $event->getPlayer();
 		if(isset(WarpGUI::getInstance()->editwarp[$player->getName()])){
 			$event->cancel();
@@ -39,9 +39,9 @@ class EventListener implements Listener {
 				break;
 				case "position":
 				case "location":
-				    $x = $player->getPosition()->getX();
-				    $y = $player->getPosition()->getY();
-				    $z = $player->getPosition()->getZ();
+				    $x = round($player->getPosition()->getX());
+				    $y = round($player->getPosition()->getY());
+				    $z = round($player->getPosition()->getZ());
 				    $world = $player->getPosition()->getWorld()->getDisplayName();
 				    if(WarpGUI::getInstance()->getWarp()->exists($warp)){
 				        WarpGUI::getInstance()->getWarp()->set($warp, [
@@ -84,7 +84,7 @@ class EventListener implements Listener {
                 break;
                 case "item":
                   $item = $player->getInventory()->getItemInHand();
-                    if($item instanceof ItemBlock && $item instanceof Item){
+                    if($item instanceof ItemBlock or $item instanceof Item){
                     	$name = str_replace([" "], ["_"], strtolower($player->getInventory()->getItemInHand()->getVanillaName()));
                     	WarpGUI::getInstance()->getWarp()->set($warp, [
                             "position" => WarpGUI::getInstance()->getWarp()->get($warp)["position"],
@@ -94,7 +94,6 @@ class EventListener implements Listener {
                     	]);
                         WarpGUI::getInstance()->getWarp()->save();
                     	$player->sendMessage("§9[ §aSuccessfully §9]§r§e You have updated item warp in gui");
-			return;
                     }
                 break;
                 case "slot":
@@ -107,10 +106,7 @@ class EventListener implements Listener {
 		                	$slot = (int)$args[1];
 		                	$all_warp = WarpGUI::getInstance()->getWarp()->getAll();
 		                	foreach($all_warp as $data => $key){
-		                	  if(!$args[1] === $all_warp[$data]["slot"]){
-		                	    $player->sendMessage("§9[ §4ERROR §9]§r§c That slot already exists, please try again");
-		                	    return;
-		                	  }else{
+		                	  if($slot !== $key["slot"]){
 		                    WarpGUI::getInstance()->getWarp()->set($warp, [
                                              "position" => WarpGUI::getInstance()->getWarp()->get($warp)["position"],
                                              "world" => WarpGUI::getInstance()->getWarp()->get($warp)["world"],
@@ -120,6 +116,9 @@ class EventListener implements Listener {
 				            	WarpGUI::getInstance()->getWarp()->save();
 		                        $player->sendMessage("§9[ §aSuccessfully §9]§r§e You have updated slot item in warp to $slot");
 		                        return;
+		                	  }else{
+		                	    $player->sendMessage("§9[ §4ERROR §9]§r§c That slot already exists, please try again");
+		                	    return;
 		                	  }
 		              	  }
 		                }else{
